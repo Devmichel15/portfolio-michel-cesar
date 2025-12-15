@@ -1,21 +1,32 @@
-import projects from "../data";
+import { projects } from "../data";
 import { FaGithub } from "react-icons/fa6";
+import { motion } from "motion/react"
 
 function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center p-4 bg-white"
+      className="min-h-screen flex flex-col items-center p-4 bg-white mt-14"
     >
-      <h2 className="text-3xl font-bold mb-8 mt-8">Meus Projectos</h2>
+      <motion.h2
+        initial={{ opacity: 1, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ transition: 0.5, delay: 0.5, ease: "easeInOut" }}
+        className="text-3xl font-bold mb-8 mt-8"
+      >
+        Meus Projectos
+      </motion.h2>
       <p className="text-lg text-gray-700">
         Aqui estão alguns dos meus projectos recentes. Sinta-se à vontade para
         explorá-los!
       </p>
 
-      <div className="flex flex-wrap w-full justify-between mt-8 gap-8">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project) => (
-          <div
+          <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ transition: 0.5, delay: 0.5, ease: "easeInOut" }}
             key={project.id}
             className="w-full h-full max-w-80 text-center bg-white rounded-lg shadow-md p-6 m-3 flex flex-col items-center hover:scale-105 transition-all duraction-300 ease-in-out"
           >
@@ -30,7 +41,7 @@ function Projects() {
                 {""}<FaGithub className="text-neutral-900 font-bold scale-105"/> 
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

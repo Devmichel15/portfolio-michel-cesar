@@ -3,7 +3,7 @@ import About from "./sections/About";
 import Footer from "./components/Footer";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
-
+import Skills from "./sections/Skills";
 function App(){
 
   return(
@@ -11,6 +11,7 @@ function App(){
       <Hero />
       <About />
       <Projects />
+      <Skills />
       <Contact />
       <Footer />
     </div>
