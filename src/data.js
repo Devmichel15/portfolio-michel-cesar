@@ -1,10 +1,10 @@
-
 import { FaGithub } from "react-icons/fa";
 import { SiVercel, SiNetlify, SiRender } from "react-icons/si";
 import { FaNodeJs, FaCode } from "react-icons/fa";
 import { SiExpress, SiFirebase, SiMongodb, SiPrisma } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
+import { link } from "motion/react-client";
 
 export const projects = [
   {
@@ -13,47 +13,48 @@ export const projects = [
     image: "/project1.png",
     description:
       "Projeto de cadastro de usuários utilizando React e armazenando os dados no Local Storage do navegador.",
-    link: "https://github.com/Devmichel15/cadastro-de-users",
+    repo: "https://github.com/Devmichel15/cadastro-de-users",
     techs: ["React", "JavaScript", "Tailwind CSS"],
-},
+  },
 
   {
     id: 2,
     name: "SaaS de gestão financeira",
     image: "/project3.png",
     description:
-    "Sistema de gestão financeira para pequenas empresas, com funcionalidades de controle de despesas, receitas e geração de relatórios.",
-    link: "https://github.com/Devmichel15/gestao-ativa-app",
+      "Sistema de gestão financeira para pequenas empresas, com funcionalidades de controle de despesas, receitas e geração de relatórios.",
+    repo: "https://github.com/Devmichel15/gestao-ativa-app",
+    link: "https://gestao-ativa-app.onrender.com",
     techs: ["React", "Node.js", "Firebase", "Tailwind CSS"],
-},
+  },
 
   {
     id: 3,
     name: "Loja de Acessórios Online",
     image: "/project2.png",
     description:
-    "Um website de e-commerce para venda de acessórios de moda, com carrinho de compras e integração com API do Whatsapp.",
-    link: "https://github.com/Devmichel15/Acessory-Store",
+      "Um website de e-commerce para venda de acessórios de moda, com carrinho de compras e integração com API do Whatsapp.",
+    repo: "https://github.com/Devmichel15/Acessory-Store",
     techs: ["HTML", "JavaScript", "CSS"],
   },
 
   {
-      id: 4,
-      name: "Landing Page para o Restaurante | Café Del Mar",
+    id: 4,
+    name: "Landing Page para o Restaurante | Café Del Mar",
     image: "/project4.png",
     description:
       "Landing page para o restaurante Café Del Mar, com informações sobre cardápio e localização.",
-    link: "https://github.com/Devmichel15/site-del-mar",
+    repo: "https://github.com/Devmichel15/site-del-mar",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
-  
+
   {
-      id: 5,
+    id: 5,
     name: "Landing Page para o Influencer | Nuno Baio",
     image: "/project6.png",
     description:
       "Landing page para o influencer Nuno Baio, com informações sobre seus serviços e contato.",
-    link: "https://github.com/Devmichel15/website-nuno-baio",
+    repo: "https://github.com/Devmichel15/website-nuno-baio",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
 
@@ -63,9 +64,31 @@ export const projects = [
     image: "/project5.png",
     description:
       "Landing page para a influencer Jessi Madalena, com informações sobre seus serviços e contato.",
-      link: "https://github.com/Devmichel15/site-jessi",
-      techs: ["React", "JavaScript", "Tailwind CSS"],
-    },
+    repo: "https://github.com/Devmichel15/site-jessi",
+    techs: ["React", "JavaScript", "Tailwind CSS"],
+  },
+
+  {
+    id: 7,
+    name: "Biografia - Prodígio",
+    image: "/project7.png",
+    description:
+      "Website biográfico para o artista Prodígio, apresentando sua carreira e obras.",
+    repo: "https://github.com/Devmichel15/site-prodigio",
+    link: "https://site-prodigio.onrender.com",
+    techs: ["React", "JavaScript", "Tailwind CSS"],
+  },
+
+  {
+    id: 8,
+    name: "website para Dona Flor",
+    image: "/project8.png",
+    description:
+      "Website para a Dona Flor, apresentando seus serviços e informações de contato.",
+    repo: "https://github.com/Devmichel15/Dona-Flor",
+    link: "https://dona-flor.onrender.com",
+    techs: ["React", "JavaScript", "Tailwind CSS"],
+  }
 ];
 
 export const skillsFrontend = [
@@ -112,7 +135,6 @@ export const skillsFrontend = [
     color: "text-pink-500",
   },
 ];
-
 
 export const skillsBackend = [
   {
