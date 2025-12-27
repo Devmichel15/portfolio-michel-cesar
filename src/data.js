@@ -4,7 +4,7 @@ import { FaNodeJs, FaCode } from "react-icons/fa";
 import { SiExpress, SiFirebase, SiMongodb, SiPrisma } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
-import { link } from "motion/react-client";
+import { image, link } from "motion/react-client";
 
 export const projects = [
   {
@@ -88,6 +88,15 @@ export const projects = [
     repo: "https://github.com/Devmichel15/Dona-Flor",
     link: "https://dona-flor.onrender.com",
     techs: ["React", "JavaScript", "Tailwind CSS"],
+  },
+
+  {
+    id: 9,
+    name: "Website Restaurante Por do Sol",
+    image: "project9.png",
+    repo: "https://github.com/Devmichel15/por-do-sol",
+    link: "https://por-do-sol.onrender.com",
+    techs: ["React", "Javascript", "Tailwindcss"]
   }
 ];
 
