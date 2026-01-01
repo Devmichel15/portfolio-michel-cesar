@@ -1,10 +1,11 @@
 import { FaGithub } from "react-icons/fa";
-import { SiVercel, SiNetlify, SiRender } from "react-icons/si";
+import { SiVercel, SiNetlify, SiRender, SiSupabase } from "react-icons/si";
 import { FaNodeJs, FaCode } from "react-icons/fa";
-import { SiExpress, SiFirebase, SiMongodb, SiPrisma } from "react-icons/si";
+import { SiExpress, SiFirebase, SiMongodb, SiPrisma, SiGit } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
 import { image, link } from "motion/react-client";
+import { color } from "motion";
 
 export const projects = [
   {
@@ -12,8 +13,9 @@ export const projects = [
     name: "Cadastro de Usuários",
     image: "/project1.png",
     description:
-      "Projeto de cadastro de usuários utilizando React e armazenando os dados no Local Storage do navegador.",
+      "Projeto de cadastro de usuários utilizando React e armazenando os dados no banco de dados Postgres do Supabase",
     repo: "https://github.com/Devmichel15/cadastro-de-users",
+    link: "https://cadastro-de-users.onrender.com",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
 
@@ -139,7 +141,7 @@ export const skillsFrontend = [
   {
     id: 6,
     name: "Framer Motion",
-    level: "Básico",
+    level: "Avançado",
     icon: SiFramer,
     color: "text-pink-500",
   },
@@ -181,12 +183,19 @@ export const skillsBackend = [
     icon: SiPrisma,
     color: "text-indigo-500",
   },
+  {
+    id: 6,
+    name: "Supabase",
+    level: "Intermediário",
+    icon: SiSupabase, // se estiver usando os ícones do react-icons
+    color: "text-green-500",
+  },
 ];
 
 export const skillsTools = [
   {
     id: 1,
-    name: "Git & GitHub",
+    name: "GitHub",
     level: "Intermediário",
     icon: FaGithub,
     color: "text-neutral-800",
@@ -219,4 +228,11 @@ export const skillsTools = [
     icon: SiRender,
     color: "text-indigo-600",
   },
+  {
+    id: 6,
+    name: "Git",
+    level: "Intermediário",
+    icon: SiGit,
+    color: "text-red-500"
+  }
 ];
