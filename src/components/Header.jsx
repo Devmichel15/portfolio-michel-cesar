@@ -1,47 +1,75 @@
+import { useState, useEffect } from "react";
+
+/**
+ * Header Component
+ * Sticky navigation with premium dark glassmorphism and active section tracking
+ */
 function Header() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const sections = ["hero", "about", "projects", "skills", "contact"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px -50% 0px", // Trigger closer to the middle
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const navLinks = [
+    { name: "Sobre", href: "#about", id: "about" },
+    { name: "Projetos", href: "#projects", id: "projects" },
+    { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Contato", href: "#contact", id: "contact" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur border-b border-neutral-200">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo / Nome */}
-        <div className="text-xl font-semibold tracking-tight text-neutral-900">
+    <header className="fixed top-0 left-0 z-50 w-full glass-nav">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <div className="text-xl font-black tracking-tighter text-white uppercase italic">
           Michel César
         </div>
 
-        {/* Navegação */}
-        <nav className="hidden gap-8 md:flex">
-          <a
-            href="#about"
-            className="text-sm font-medium text-neutral-700 transition hover:text-neutral-900"
-          >
-            Sobre
-          </a>
-          <a
-            href="#projects"
-            className="text-sm font-medium text-neutral-700 transition-all duraction-300 ease-in-out hover:text-neutral-900"
-          >
-            Projetos
-          </a>
-          <a
-            href="#skills"
-            className="text-sm font-medium text-neutral-700 transition-all duraction-300 ease-in-out hover:text-neutral-900"
-          >
-            Skills
-          </a>
-          <a
-            href="#contact"
-            className="text-sm font-medium text-neutral-700 transition-all duraction-300 ease-in-out hover:text-neutral-900"
-          >
-            Contato
-          </a>
+        {/* Desktop Nav */}
+        <nav className="hidden gap-10 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              className={`text-[11px] uppercase font-black tracking-[0.2em] transition-all duration-300 ${
+                activeSection === link.id
+                  ? "text-premium-accent"
+                  : "text-stone-500 hover:text-white"
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
-        {/* CTA */}
+        {/* CTA Button */}
         <a
-          href="https://wa.me/244928536339?text=Olá%20Michel,%20vi%20seu%20portfólio"
+          href="https://wa.me/244928536339?text=Olá Michel, vi seu portfólio"
           target="_blank"
-          className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-all duraction-300 ease-in-out hover:bg-neutral-800 hover:scale-105 "
+          rel="noopener noreferrer"
+          className="hidden sm:block rounded-full border border-white/10 bg-white/5 px-8 py-3 text-[11px] font-black uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black active:scale-95"
         >
-          Fale comigo
+          Vamos Conversar
         </a>
       </div>
     </header>

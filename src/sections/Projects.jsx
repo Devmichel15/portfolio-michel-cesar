@@ -1,74 +1,103 @@
+import { useRef } from "react";
+import { useAnimateOnScroll } from "../hooks/useAnimateOnScroll";
 import { projects } from "../data";
-import { FaGithub } from "react-icons/fa6";
-import { motion } from "motion/react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+/**
+ * Projects Section
+ * High-impact grid with standardized scroll-triggered entrance
+ */
 function Projects() {
+  const containerRef = useRef(null);
+
+  // Centralized animation for header and cards
+  useAnimateOnScroll(
+    ".projects-anim",
+    { y: 40, stagger: 0.15, start: "top 90%" },
+    containerRef,
+  );
+
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center p-4 bg-white mt-14"
+      ref={containerRef}
+      className="relative py-32 bg-premium-bg px-6 border-t border-white/5"
     >
-      <motion.h2
-        initial={{ opacity: 1, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ transition: 0.5, delay: 0.5, ease: "easeInOut" }}
-        className="text-3xl font-bold mb-8 mt-8"
-      >
-        Meus Projectos
-      </motion.h2>
-      <p className=" text-gray-700 mb-8 text-2xl">
-        Aqui estão alguns dos meus projectos recentes. Sinta-se à vontade para
-        explorá-los!
-      </p>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 px-3">
-        {projects.map((project) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform duration-300 ease-in-out"
-          >
-            {/* Imagem do projeto */}
-            <div className="w-full h-64 overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-full object-cover object-center transition-transform duration-300 ease-in-out hover:scale-110"
-              />
-            </div>
+      <div className="max-w-7xl mx-auto">
+        <header className="projects-anim text-center mb-24">
+          <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase italic">
+            Trabalhos Selecionados
+          </h2>
+          <p className="text-stone-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            Soluções digitais focadas em{" "}
+            <span className="text-stone-300 font-medium italic">
+              impacto real
+            </span>{" "}
+            e usabilidade.
+          </p>
+        </header>
 
-            {/* Conteúdo */}
-            <div className="p-5 flex flex-col flex-1 justify-between">
-              <div>
-                <h3 className="text-2xl font-semibold mb-3">{project.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm sm:text-base">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article
+              key={project.id}
+              className="projects-anim project-card group bg-premium-card border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-500 flex flex-col h-full hover:shadow-2xl hover:shadow-premium-accent/5"
+            >
+              {/* Media Container */}
+              <div className="aspect-video overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-700">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-premium-bg/40 mix-blend-multiply group-hover:opacity-0 transition-opacity" />
+              </div>
+
+              {/* Data Container */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-premium-accent transition-colors">
+                  {project.name}
+                </h3>
+                <p className="text-stone-500 text-sm leading-relaxed mb-8 grow">
                   {project.description}
                 </p>
-              </div>
 
-              {/* Links */}
-              <div className="flex flex-col sm:flex-row sm:justify-between gap-3 mt-4">
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  className="flex items-center justify-center gap-2 bg-blue-500 text-white rounded-full px-4 py-2 hover:bg-blue-600 transition"
-                >
-                  Repositório <FaGithub className="scale-105" />
-                </a>
-                {project.link && (
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {project.techs.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-[10px] uppercase font-black tracking-widest text-premium-muted bg-white/5 px-3 py-1 rounded-full border border-white/5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4 pt-6 border-t border-white/5">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-white text-black py-4 rounded-xl font-black text-[11px] tracking-widest hover:bg-premium-accent hover:text-white transition-all flex items-center justify-center gap-2 active:scale-95"
+                    >
+                      VISITAR <FaExternalLinkAlt size={12} />
+                    </a>
+                  )}
                   <a
-                    href={project.link}
+                    href={project.repo}
                     target="_blank"
-                    className="flex items-center justify-center bg-green-500 text-white rounded-full px-4 py-2 hover:bg-green-600 transition"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center bg-white/5 text-white py-4 rounded-xl font-black text-[11px] tracking-widest hover:bg-white hover:text-black transition-all border border-white/10 flex items-center justify-center gap-2 active:scale-95"
                   >
-                    Visitar Site
+                    CÓDIGO <FaGithub size={14} />
                   </a>
-                )}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

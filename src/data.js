@@ -1,11 +1,15 @@
 import { FaGithub } from "react-icons/fa";
 import { SiVercel, SiNetlify, SiRender, SiSupabase } from "react-icons/si";
 import { FaNodeJs, FaCode } from "react-icons/fa";
-import { SiExpress, SiFirebase, SiMongodb, SiPrisma, SiGit } from "react-icons/si";
+import {
+  SiExpress,
+  SiFirebase,
+  SiMongodb,
+  SiPrisma,
+  SiGit,
+} from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
-import { image, link } from "motion/react-client";
-import { color } from "motion";
 
 export const projects = [
   {
@@ -13,7 +17,7 @@ export const projects = [
     name: "Cadastro de Usuários",
     image: "/project1.png",
     description:
-      "Projeto de cadastro de usuários utilizando React e armazenando os dados no banco de dados Postgres do Supabase",
+      "Aplicação full-stack para cadastro e gestão de usuários, com autenticação, persistência de dados em tempo real e integração com banco de dados PostgreSQL via Supabase. Ideal para sistemas que exigem controle e segurança de informações.",
     repo: "https://github.com/Devmichel15/cadastro-de-users",
     link: "https://cadastro-de-users.onrender.com",
     techs: ["React", "JavaScript", "Tailwind CSS"],
@@ -21,10 +25,10 @@ export const projects = [
 
   {
     id: 2,
-    name: "SaaS de gestão financeira",
+    name: "SaaS de Gestão Financeira",
     image: "/project3.png",
     description:
-      "Sistema de gestão financeira para pequenas empresas, com funcionalidades de controle de despesas, receitas e geração de relatórios.",
+      "Plataforma SaaS desenvolvida para pequenas empresas controlarem despesas, receitas e desempenho financeiro. O sistema gera relatórios claros para apoiar decisões estratégicas e melhorar a saúde financeira do negócio.",
     repo: "https://github.com/Devmichel15/gestao-ativa-app",
     link: "https://gestao-ativa-app.onrender.com",
     techs: ["React", "Node.js", "Firebase", "Tailwind CSS"],
@@ -35,47 +39,47 @@ export const projects = [
     name: "Loja de Acessórios Online",
     image: "/project2.png",
     description:
-      "Um website de e-commerce para venda de acessórios de moda, com carrinho de compras e integração com API do Whatsapp.",
+      "E-commerce moderno para venda de acessórios, com catálogo organizado, carrinho de compras e integração direta com WhatsApp para facilitar pedidos e aumentar a taxa de conversão.",
     repo: "https://github.com/Devmichel15/Acessory-Store",
     techs: ["HTML", "JavaScript", "CSS"],
   },
 
   {
     id: 4,
-    name: "Landing Page para o Restaurante | Café Del Mar",
+    name: "Landing Page | Restaurante Café Del Mar",
     image: "/project4.png",
     description:
-      "Landing page para o restaurante Café Del Mar, com informações sobre cardápio e localização.",
+      "Landing page profissional criada para fortalecer a presença digital do restaurante, destacando cardápio, localização e identidade visual, com foco em atrair clientes e aumentar reservas.",
     repo: "https://github.com/Devmichel15/site-del-mar",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
 
   {
     id: 5,
-    name: "Landing Page para o Influencer | Nuno Baio",
+    name: "Landing Page | Influencer Nuno Baio",
     image: "/project6.png",
     description:
-      "Landing page para o influencer Nuno Baio, com informações sobre seus serviços e contato.",
+      "Website pessoal desenvolvido para posicionar o influencer como marca, apresentando serviços, propostas comerciais e canais de contato de forma clara e estratégica.",
     repo: "https://github.com/Devmichel15/website-nuno-baio",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
 
   {
     id: 6,
-    name: "Landing Page para a Influencer | Jessi Madalena",
+    name: "Landing Page | Influencer Jessi Madalena",
     image: "/project5.png",
     description:
-      "Landing page para a influencer Jessi Madalena, com informações sobre seus serviços e contato.",
+      "Landing page focada em conversão, criada para apresentar serviços, fortalecer a imagem pessoal da influencer e facilitar o contato com marcas e parceiros.",
     repo: "https://github.com/Devmichel15/site-jessi",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
 
   {
     id: 7,
-    name: "Biografia - Prodígio",
+    name: "Biografia Digital | Prodígio",
     image: "/project7.png",
     description:
-      "Website biográfico para o artista Prodígio, apresentando sua carreira e obras.",
+      "Website biográfico desenvolvido para o artista Prodígio, destacando sua trajetória, obras e identidade cultural, com um design moderno e responsivo.",
     repo: "https://github.com/Devmichel15/site-prodigio",
     link: "https://site-prodigio.onrender.com",
     techs: ["React", "JavaScript", "Tailwind CSS"],
@@ -83,10 +87,10 @@ export const projects = [
 
   {
     id: 8,
-    name: "website para Dona Flor",
+    name: "Website Institucional | Dona Flor",
     image: "/project8.png",
     description:
-      "Website para a Dona Flor, apresentando seus serviços e informações de contato.",
+      "Website institucional criado para apresentar serviços, transmitir credibilidade e facilitar o contato com clientes, reforçando a presença online do negócio.",
     repo: "https://github.com/Devmichel15/Dona-Flor",
     link: "https://dona-flor.onrender.com",
     techs: ["React", "JavaScript", "Tailwind CSS"],
@@ -94,11 +98,13 @@ export const projects = [
 
   {
     id: 9,
-    name: "Website Restaurante Por do Sol",
-    image: "project9.png",
+    name: "Website | Restaurante Pôr do Sol",
+    image: "/project9.png",
+    description:
+      "Website moderno e responsivo para restaurante, focado em apresentar o ambiente, cardápio e localização, ajudando a atrair clientes e fortalecer a marca.",
     repo: "https://github.com/Devmichel15/por-do-sol",
     link: "https://por-do-sol.onrender.com",
-    techs: ["React", "Javascript", "Tailwindcss"]
+    techs: ["React", "JavaScript", "Tailwind CSS"]
   }
 ];
 
@@ -233,6 +239,6 @@ export const skillsTools = [
     name: "Git",
     level: "Intermediário",
     icon: SiGit,
-    color: "text-red-500"
-  }
+    color: "text-red-500",
+  },
 ];

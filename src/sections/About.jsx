@@ -1,32 +1,51 @@
-import { motion } from "motion/react"
+import { useRef } from "react";
+import { useAnimateOnScroll } from "../hooks/useAnimateOnScroll";
+
+/**
+ * About Section (Philosophy)
+ * Professional positioning with clean typography and GSAP scroll animations
+ */
 function About() {
+  const containerRef = useRef(null);
+
+  // Apply centralized scroll animation
+  useAnimateOnScroll(".about-content", { stagger: 0.2 }, containerRef);
+
   return (
-    <section id="about" className="pt-24 pb-16 flex flex-col gap-6 text-center">
-      <h2 className="text-3xl font-bold">Sobre mim</h2>
+    <section
+      id="about"
+      ref={containerRef}
+      className="py-32 bg-premium-bg px-6 border-t border-white/5 overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+        {/* Profile Image with micro-interaction */}
+        <div className="about-content relative group">
+          <div className="absolute -inset-4 bg-premium-accent/20 rounded-full blur-2xl group-hover:bg-premium-accent/40 transition-colors duration-700" />
+          <img
+            src="/michel2.jpeg"
+            alt="Michel César"
+            className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700 border-2 border-white/10"
+          />
+        </div>
 
-      <div className="flex flex-col-reverse md:flex-row w-full items-center justify-evenly gap-6 sm:gap-8 px-4 sm:px-6 lg:px-12">
-        
-        <motion.p 
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{transition: 0.5, delay: 0.5, ease: "easeInOut"}}
-        className="max-w-96 text-start tracking-widest text-neutral-700 mt-4">
-          Olá! Eu sou Michel César, um desenvolvedor front-end apaixonado por
-          criar experiências digitais incríveis. Com habilidades em React e
-          Tailwind CSS, eu me dedico a construir interfaces modernas,
-          responsivas e fáceis de usar. Meu objetivo é transformar ideias em
-          realidade através do código, sempre buscando inovação e excelência em
-          cada projeto que realizo.
-        </motion.p>
-
-        <motion.img
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ transition: 0.5, delay: 1, ease: "easeInOut" }}
-          src="/michel2.jpeg"
-          alt="Michel César"
-          className="w-40 h-40 sm:w-52 sm:h-52 rounded-full object-cover object-center border-4 border-blue-400 hover:scale-105 transition-all duration-300 ease-in-out"
-        />
+        {/* Philosophy Text */}
+        <div className="flex-1 max-w-2xl text-center lg:text-left space-y-8">
+          <h2 className="about-content text-xs font-black tracking-[0.4em] text-premium-accent uppercase">
+            Minha Filosofia
+          </h2>
+          <p className="about-content text-3xl md:text-5xl font-black text-white leading-tight tracking-tight">
+            Interfaces excepcionais nascem do equilíbrio entre{" "}
+            <span className="italic text-stone-500">estética minimalista</span>{" "}
+            e <span className="text-premium-accent">lógica de negócio</span>.
+          </p>
+          <div className="about-content h-px w-20 bg-white/10 mx-auto lg:mx-0" />
+          <p className="about-content text-lg text-stone-500 font-light leading-relaxed">
+            Olá! Sou Michel César, desenvolvedor focado em transformar ideias em
+            realidade através do código. Meu objetivo não é apenas escrever
+            linhas de código, mas construir experiências que convertam e
+            agreguem valor estratégico a cada projeto.
+          </p>
+        </div>
       </div>
     </section>
   );

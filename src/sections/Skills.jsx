@@ -1,108 +1,77 @@
-import { skillsFrontend } from "../data";
-import { skillsBackend } from "../data";
-import { skillsTools } from "../data";
-import { motion } from "motion/react"
+import { useRef } from "react";
+import { useAnimateOnScroll } from "../hooks/useAnimateOnScroll";
+import { skillsFrontend, skillsBackend, skillsTools } from "../data";
 
+/**
+ * Skills Section (Ecosystem)
+ * Displays technolgy stack with standardized GSAP scroll animations
+ */
 function Skills() {
-  return (
-    <section id="skills" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Título */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold">Habilidades</h2>
-          <p className="text-neutral-500 mt-2">
-            Tecnologias que utilizo no desenvolvimento front-end
-          </p>
-        </div>
+  const containerRef = useRef(null);
 
-        {/* Frontend */}
-        <h3 className="text-2xl font-semibold mb-8 text-center">
-          Desenvolvimento Front-end
-        </h3>
+  // Apply centralized scroll animation to all items
+  useAnimateOnScroll(
+    ".skill-item",
+    { y: 20, stagger: 0.05, start: "top 90%" },
+    containerRef,
+  );
 
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {skillsFrontend.map((skill) => {
-            const Icon = skill.icon;
-
-            return (
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ transition: 0.5, delay: 0.5, ease: "easeInOut" }}
-                key={skill.id}
-                className="p-6 rounded-2xl border bg-neutral-50
-                           hover:shadow-lg hover:-translate-y-1
-                           transition-all duration-300"
-              >
-                <Icon className={`text-4xl mb-4 ${skill.color}`} />
-
-                <h4 className="text-lg font-semibold">{skill.name}</h4>
-
-                <span className="text-sm text-neutral-500">{skill.level}</span>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Backend */}
-        <h3 className="text-2xl font-semibold mb-8 text-center mt-16">
-          Desenvolvimento Backend
-        </h3>
-
-        <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ transition: 0.5, delay: 0.5, ease: "easeInOut" }}
-        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {skillsBackend.map((skill) => {
-            const Icon = skill.icon;
-
-            return (
-              <div
-                key={skill.id}
-                className="p-6 rounded-2xl border bg-neutral-50
-                           hover:shadow-lg hover:-translate-y-1
-                           transition-all duration-300"
-              >
-                <Icon className={`text-4xl mb-4 ${skill.color}`} />
-
-                <h4 className="text-lg font-semibold">{skill.name}</h4>
-
-                <span className="text-sm text-neutral-500">{skill.level}</span>
+  const renderCategory = (title, skills) => (
+    <div className="space-y-8">
+      <h3 className="text-lg font-black text-white flex items-center gap-3 uppercase tracking-widest">
+        <span className="w-1.5 h-6 bg-premium-accent rounded-full" />
+        {title}
+      </h3>
+      <div className="grid grid-cols-2 gap-4">
+        {skills.map((skill) => {
+          const Icon = skill.icon;
+          return (
+            <div
+              key={skill.id}
+              className="skill-item group flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-premium-accent/30 hover:bg-white/8 transition-all duration-500 hover:scale-105 active:scale-95"
+            >
+              <div className="p-2 rounded-xl bg-white/5 text-stone-400 group-hover:text-white group-hover:bg-premium-accent/10 transition-all duration-500">
+                <Icon className="text-2xl" />
               </div>
-            );
-          })}
-        </motion.div>
-
-        {/* Ferramentas */}
-        <h3 className="text-2xl font-semibold mb-8 text-center mt-16">
-          Ferramentas e Plataformas
-        </h3>
-        <motion.div 
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ transition: 0.5, delay: 0.5, ease: "easeInOut" }}
-        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {skillsTools.map((skill) => {
-            const Icon = skill.icon;
-
-            return (
-              <div
-                key={skill.id}
-                className="p-6 rounded-2xl border bg-neutral-50
-                           hover:shadow-lg hover:-translate-y-1
-                           transition-all duration-300"
-              >
-                <Icon className={`text-4xl mb-4 ${skill.color}`} />
-
-                <h4 className="text-lg font-semibold">{skill.name}</h4>
-
-                <span className="text-sm text-neutral-500">{skill.level}</span>
-              </div>
-            );
-          })}
-        </motion.div>
+              <span className="text-sm font-bold text-stone-500 group-hover:text-white transition-colors tracking-tight">
+                {skill.name}
+              </span>
+            </div>
+          );
+        })}
       </div>
+    </div>
+  );
+
+  return (
+    <section
+      id="skills"
+      ref={containerRef}
+      className="py-32 bg-premium-bg border-t border-white/5 relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        <header className="text-center mb-24">
+          <h2 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
+            Meu Ecossistema
+          </h2>
+          <p className="text-stone-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            Minha stack é focada em ferramentas que garantem{" "}
+            <span className="text-white font-medium italic">
+              performance, escalabilidade e manutenibilidade
+            </span>
+            .
+          </p>
+        </header>
+
+        <div className="grid gap-16 md:grid-cols-3">
+          {renderCategory("Frontend", skillsFrontend)}
+          {renderCategory("Backend", skillsBackend)}
+          {renderCategory("Platform", skillsTools)}
+        </div>
+      </div>
+
+      {/* Decorative accent blur */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-premium-accent/5 blur-[120px] rounded-full translate-y-1/2 translate-x-1/2 pointer-events-none" />
     </section>
   );
 }
