@@ -87,18 +87,18 @@ function Hero() {
           Frontend Developer - Junior Coder
         </p>
 
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-white mb-10 leading-[1.1] sm:leading-[0.9] lg:leading-[0.85] perspective-1000">
-          <div className="mb-2">
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter mb-10 leading-[1.1] sm:leading-[0.9] lg:leading-[0.85] perspective-1000">
+          <span className="block mb-2 text-white">
             {renderSplitText("Transformo Visão", "split-char-1")}
-          </div>
-          <div className="text-transparent bg-clip-text bg-linear-to-r from-stone-200 to-stone-500">
+          </span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
             {renderSplitText("em Experiência Digital.", "split-char-2")}
-          </div>
+          </span>
         </h1>
 
-        <p className="hero-desc text-base md:text-lg lg:text-xl text-stone-500 max-w-2xl mb-14 leading-relaxed font-light">
+        <p className="hero-desc text-base md:text-lg lg:text-xl text-stone-400 max-w-2xl mb-14 leading-relaxed font-light">
           Arquiteturas que equilibram{" "}
-          <span className="text-stone-300">estética minimalista</span> e{" "}
+          <span className="text-blue-400">estética minimalista</span> e{" "}
           <span className="text-white font-medium italic">
             estratégia de negócio
           </span>

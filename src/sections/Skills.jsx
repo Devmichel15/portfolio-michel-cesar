@@ -33,7 +33,7 @@ function Skills() {
               <div className="p-2 rounded-xl bg-white/5 text-stone-400 group-hover:text-white group-hover:bg-premium-accent/10 transition-all duration-500">
                 <Icon className="text-2xl" />
               </div>
-              <span className="text-sm font-bold text-stone-500 group-hover:text-white transition-colors tracking-tight">
+              <span className="text-sm font-bold text-stone-400 group-hover:text-white transition-colors tracking-tight">
                 {skill.name}
               </span>
             </div>
@@ -54,7 +54,7 @@ function Skills() {
           <h2 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
             Meu Ecossistema
           </h2>
-          <p className="text-stone-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-stone-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
             Minha stack é focada em ferramentas que garantem{" "}
             <span className="text-white font-medium italic">
               performance, escalabilidade e manutenibilidade

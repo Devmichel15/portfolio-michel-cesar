@@ -32,7 +32,7 @@ function Contact() {
           <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase italic">
             Vamos Conversar?
           </h2>
-          <p className="text-stone-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-stone-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
             Interessado em escalar sua visão digital?{" "}
             <span className="text-white font-medium">
               Vamos construir algo memorável.
@@ -144,7 +144,7 @@ function Contact() {
 
         {/* Footer-like closer */}
         <footer className="contact-anim mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 opacity-40">
-          <p className="text-stone-500 text-[10px] font-black uppercase tracking-[0.3em]">
+          <p className="text-stone-400 text-[10px] font-black uppercase tracking-[0.3em]">
             © {new Date().getFullYear()} Michel César — Built with Precision
           </p>
           <div className="flex gap-10">

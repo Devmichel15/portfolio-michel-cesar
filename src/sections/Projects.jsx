@@ -44,7 +44,7 @@ function Projects() {
               className="projects-anim project-card group bg-premium-card border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-500 flex flex-col h-full hover:shadow-2xl hover:shadow-premium-accent/5"
             >
               {/* Media Container */}
-              <div className="aspect-video overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-700">
+              <div className="aspect-video overflow-hidden relative group-hover:scale-105 transition-all duration-700">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -59,7 +59,7 @@ function Projects() {
                 <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-premium-accent transition-colors">
                   {project.name}
                 </h3>
-                <p className="text-stone-500 text-sm leading-relaxed mb-8 grow">
+                <p className="text-stone-400 text-sm leading-relaxed mb-8 grow">
                   {project.description}
                 </p>
 

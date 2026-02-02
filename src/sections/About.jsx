@@ -24,7 +24,7 @@ function About() {
           <img
             src="/michel2.jpeg"
             alt="Michel César"
-            className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700 border-2 border-white/10"
+            className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-2 border-premium-accent shadow-[0_0_40px_rgba(59,130,246,0.3)] transition-all duration-700"
           />
         </div>
 
