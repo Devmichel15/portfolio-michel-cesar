@@ -40,7 +40,7 @@ body {
   filter: blur(120px);
   opacity: 0.15;
   pointer-events: none;
-  z-index: 0;
+  z-index: -2;
 }
 
 .bloom-1 { top: -10%; left: -10%; background: var(--color-premium-accent); }
@@ -57,7 +57,7 @@ body {
   mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
   animation: grid-pulse 15s ease-in-out infinite alternate;
   pointer-events: none;
-  z-index: 1;
+  z-index: -1;
 }
 
 @keyframes grid-pulse {

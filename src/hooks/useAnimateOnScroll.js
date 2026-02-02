@@ -1,4 +1,4 @@
-import { useGSAP } from "@gsap/react";
+import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -6,13 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Custom hook to centralize scroll-triggered GSAP animations
- * uses fromTo to ensure visibility state is captured and applied only on trigger
+ * uses standard useLayoutEffect for maximum production compatibility
  */
 export const useAnimateOnScroll = (selector, props = {}, containerRef) => {
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
+  useLayoutEffect(() => {
+    if (!containerRef.current) return;
 
+    const ctx = gsap.context(() => {
       const {
         y = 40,
         x = 0,
@@ -35,9 +35,10 @@ export const useAnimateOnScroll = (selector, props = {}, containerRef) => {
         duration,
         stagger,
         ease,
-        clearProps: "all", // Clean up after animation
+        clearProps: "all",
       });
-    },
-    { scope: containerRef },
-  );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [containerRef]);
 };

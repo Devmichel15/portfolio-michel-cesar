@@ -1,20 +1,19 @@
 import Header from "../components/Header";
 import { FaGithub, FaInstagram } from "react-icons/fa";
-import { useGSAP } from "@gsap/react";
+import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { useRef } from "react";
 
 /**
  * Hero Section
- * Refined font sizes and high-impact entrance
+ * Refined font sizes and high-impact entrance using standard GSAP hooks
  */
 function Hero() {
   const containerRef = useRef(null);
 
-  useGSAP(
-    () => {
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-
       const splitTitle1 = gsap.utils.toArray(".split-char-1");
       const splitTitle2 = gsap.utils.toArray(".split-char-2");
 
@@ -60,9 +59,10 @@ function Hero() {
           { opacity: 1, scale: 1, duration: 0.6, ease: "elastic.out(1, 0.5)" },
           "-=0.4",
         );
-    },
-    { scope: containerRef },
-  );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const renderSplitText = (text, charClass) => (
     <span className="inline-block" aria-label={text}>
