@@ -15,17 +15,7 @@ import { SiTailwindcss, SiFramer } from "react-icons/si";
 import { img } from "motion/react-client";
 
 export const projects = [
-  {
-    id: 1,
-    name: "Cadastro de Usuários",
-    image: "/project1.png",
-    description:
-      "Aplicação full-stack para cadastro e gestão de usuários, com autenticação, persistência de dados em tempo real e integração com banco de dados PostgreSQL via Supabase. Ideal para sistemas que exigem controle e segurança de informações.",
-    repo: "https://github.com/Devmichel15/cadastro-de-users",
-    link: "https://cadastro-de-users.onrender.com",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
-  },
-
+  
   {
     id: 2,
     name: "SaaS de Gestão Financeira",
