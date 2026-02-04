@@ -22,7 +22,7 @@ function About() {
         <div className="about-content relative group">
           <div className="absolute -inset-4 bg-premium-accent/20 rounded-full blur-2xl group-hover:bg-premium-accent/40 transition-colors duration-700" />
           <img
-            src="/michel2.jpeg"
+            src="/michel.jpeg"
             alt="Michel César"
             className="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-2 border-premium-accent shadow-[0_0_40px_rgba(59,130,246,0.3)] transition-all duration-700"
           />

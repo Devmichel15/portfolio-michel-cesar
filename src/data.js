@@ -5,11 +5,14 @@ import {
   SiExpress,
   SiFirebase,
   SiMongodb,
+  SiPostgresql,
   SiPrisma,
   SiGit,
+  SiGreensock,
 } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
+import { img } from "motion/react-client";
 
 export const projects = [
   {
@@ -104,8 +107,28 @@ export const projects = [
       "Website moderno e responsivo para restaurante, focado em apresentar o ambiente, cardápio e localização, ajudando a atrair clientes e fortalecer a marca.",
     repo: "https://github.com/Devmichel15/por-do-sol",
     link: "https://por-do-sol.onrender.com",
-    techs: ["React", "JavaScript", "Tailwind CSS"]
-  }
+    techs: ["React", "JavaScript", "Tailwind CSS"],
+  },
+  {
+    id: 10,
+    name: "Site Artístico | Ghost Arte",
+    image: "/project10.png",
+    description:
+      "Ghost Artes é um site experimental focado em arte urbana e digital, com design moderno, layout responsivo e animações suaves que reforçam a experiência visual. Desenvolvido com React, Tailwind CSS e GSAP, priorizando performance e mobile-first.",
+    repo: "https://github.com/Devmichel15/site-ghost-art",
+    link: "https://site-ghost-art.onrender.com/",
+    techs: ["React", "JavaScript", "TailwindCss", "Framer motion", "Gsap"],
+  },
+  {
+    id: 11,
+    name: "Ecommerce | Mateia",
+    image: "/project11.png",
+    description:
+      "Mateia E-commerce é uma loja online desenvolvida com foco em experiência de compra intuitiva, design responsivo e navegação fluida em todas as telas. A plataforma permite que usuários explorem produtos, visualizem detalhes e interajam com um fluxo de compra otimizado, seguindo boas práticas de e-commerce moderno. Tecnologias aplicadas incluem React, Tailwind CSS e princípios de mobile-first design, garantindo performance, acessibilidade e usabilidade consistentes em dispositivos móveis e desktops.",
+    repo: "https://github.com/Devmichel15/mateia-ecommerce",
+    link: "https://mateia-ecommerce.onrender.com/",
+    techs: ["React", "JavaScript", "TailwindCss"]
+  },
 ];
 
 export const skillsFrontend = [
@@ -151,6 +174,13 @@ export const skillsFrontend = [
     icon: SiFramer,
     color: "text-pink-500",
   },
+  {
+    id: 7,
+    name: "GSAP",
+    level: "Intermediário",
+    icon: SiGreensock,
+    color: "text-[#88CE02]",
+  },
 ];
 
 export const skillsBackend = [
@@ -163,34 +193,41 @@ export const skillsBackend = [
   },
   {
     id: 2,
+    name: "PostgreSQL",
+    level: "Iniciante",
+    icon: SiPostgresql,
+    color: "text-blue-600",
+  },
+  {
+    id: 3,
     name: "Express",
     level: "Intermediário",
     icon: SiExpress,
     color: "text-neutral-800",
   },
   {
-    id: 3,
+    id: 4,
     name: "Firebase / Firestore",
     level: "Intermediário",
     icon: SiFirebase,
     color: "text-yellow-500",
   },
   {
-    id: 4,
+    id: 5,
     name: "MongoDB",
     level: "Iniciante",
     icon: SiMongodb,
     color: "text-green-500",
   },
   {
-    id: 5,
+    id: 6,
     name: "Prisma",
     level: "Iniciante",
     icon: SiPrisma,
     color: "text-indigo-500",
   },
   {
-    id: 6,
+    id: 7,
     name: "Supabase",
     level: "Intermediário",
     icon: SiSupabase, // se estiver usando os ícones do react-icons

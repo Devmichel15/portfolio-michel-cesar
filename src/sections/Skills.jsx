@@ -28,9 +28,9 @@ function Skills() {
           return (
             <div
               key={skill.id}
-              className="skill-item group flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-premium-accent/30 hover:bg-white/8 transition-all duration-500 hover:scale-105 active:scale-95"
+              className="skill-item group flex items-center gap-4 p-2 rounded-2xl bg-white/5 border border-white/5 hover:border-premium-accent/30 hover:bg-white/8 transition-all duration-500 hover:scale-105 active:scale-95"
             >
-              <div className="p-2 rounded-xl bg-white/5 text-stone-400 group-hover:text-white group-hover:bg-premium-accent/10 transition-all duration-500">
+              <div className="p-1 rounded-xl bg-white/5 text-stone-400 group-hover:text-white group-hover:bg-premium-accent/10 transition-all duration-500">
                 <Icon className="text-2xl" />
               </div>
               <span className="text-sm font-bold text-stone-400 group-hover:text-white transition-colors tracking-tight">
