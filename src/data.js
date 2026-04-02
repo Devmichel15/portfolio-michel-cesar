@@ -12,7 +12,7 @@ import {
 } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
-import { img } from "motion/react-client";
+import { image, img } from "motion/react-client";
 
 export const projects = [
   
@@ -119,6 +119,16 @@ export const projects = [
     link: "https://mateia-ecommerce.onrender.com/",
     techs: ["React", "JavaScript", "TailwindCss"]
   },
+
+  {
+    id: 12,
+    name: "Sistema de Tradução de idiomas",
+    image: "/project12.png",
+    description: "Sistema de tradução de idiomas desenvolvido com React e Tailwindcss, utilizando a API do My Memory API para fornecer traduções precisas e rápidas. O sistema apresenta uma interface intuitiva, permitindo que os usuários insiram texto e selecionem os idiomas de origem e destino, facilitando a comunicação global de forma eficiente.",
+    repo: "https://github.com/Devmichel15/google-translate",
+    link: "https://google-translate-aqqr.onrender.com",
+    techs: ["React", "JavaScript", "TailwindCss"]
+  }
 ];
 
 export const skillsFrontend = [
