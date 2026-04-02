@@ -12,7 +12,6 @@ import {
 } from "react-icons/si";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
-import { image, img } from "motion/react-client";
 
 export const projects = [
   
