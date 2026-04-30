@@ -103,11 +103,11 @@ function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden px-4"
+      className="relative flex flex-col items-center justify-center w-full h-screen px-4 overflow-hidden"
     >
       <Header />
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center pt-16 text-center">
+      <div className="relative z-10 flex flex-col items-center max-w-5xl pt-16 mx-auto text-center">
         {/* Greeting */}
         <p className="hero-greeting mb-8 text-[10px] font-black uppercase italic tracking-[0.4em] text-premium-accent md:text-xs">
           Frontend Developer — Junior Coder
@@ -136,7 +136,7 @@ function Hero() {
         </h1>
 
         {/* Description */}
-        <p className="hero-desc mb-14 max-w-2xl text-base font-light leading-relaxed text-stone-400 md:text-lg lg:text-xl">
+        <p className="max-w-2xl text-base font-light leading-relaxed hero-desc mb-14 text-stone-400 md:text-lg lg:text-xl">
           Arquiteturas que equilibram{" "}
           <span className="text-blue-400">estética minimalista</span> e{" "}
           <span className="italic font-medium text-white">
@@ -146,7 +146,7 @@ function Hero() {
         </p>
 
         {/* CTA */}
-        <div className="hero-cta flex flex-col items-center gap-10 sm:flex-row">
+        <div className="flex flex-col items-center gap-10 hero-cta sm:flex-row">
           <a
             href="#projects"
             className="group relative overflow-hidden rounded-full bg-white px-12 py-5 text-[11px] font-black text-black transition-all hover:scale-105 active:scale-95"
@@ -154,7 +154,7 @@ function Hero() {
             <span className="relative z-10 tracking-[0.2em]">
               VER TRABALHOS
             </span>
-            <div className="absolute inset-0 translate-y-full bg-premium-accent transition-transform duration-500 ease-out group-hover:translate-y-0" />
+            <div className="absolute inset-0 transition-transform duration-500 ease-out translate-y-full bg-premium-accent group-hover:translate-y-0" />
           </a>
 
           <div className="flex gap-10">
@@ -163,16 +163,16 @@ function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-3xl text-stone-700 transition-all hover:scale-110 hover:text-white"
+              className="text-3xl transition-all text-stone-700 hover:scale-110 hover:text-white"
             >
               <FaGithub />
             </a>
             <a
-              href="https://www.instagram.com/dev_angolano1"
+              href="https://www.instagram.com/michel.cesar1"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-3xl text-stone-700 transition-all hover:scale-110 hover:text-pink-500"
+              className="text-3xl transition-all text-stone-700 hover:scale-110 hover:text-pink-500"
             >
               <FaInstagram />
             </a>
