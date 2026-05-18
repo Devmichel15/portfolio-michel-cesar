@@ -33,7 +33,8 @@ export const projects = [
     description:
       "E-commerce moderno para venda de acessórios, com catálogo organizado, carrinho de compras e integração direta com WhatsApp para facilitar pedidos e aumentar a taxa de conversão.",
     repo: "https://github.com/Devmichel15/Acessory-Store",
-    techs: ["HTML", "JavaScript", "CSS"],
+    link: "https://acessory-store.onrender.com",
+    techs: ["Reactjs", "Tailwindcss", "AppWrite"],
   },
 
   {
