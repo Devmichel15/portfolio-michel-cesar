@@ -46,26 +46,17 @@ export const projects = [
     repo: "https://github.com/Devmichel15/site-del-mar",
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
-
   {
     id: 5,
-    name: "Landing Page | Influencer Nuno Baio",
-    image: "/project6.png",
-    description:
-      "Website pessoal desenvolvido para posicionar o influencer como marca, apresentando serviços, propostas comerciais e canais de contato de forma clara e estratégica.",
-    repo: "https://github.com/Devmichel15/website-nuno-baio",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
-  },
-
-  {
-    id: 6,
-    name: "Landing Page | Influencer Jessi Madalena",
+    name: "Webstart Academy | plataforma de cursos online",
     image: "/project5.png",
     description:
-      "Landing page focada em conversão, criada para apresentar serviços, fortalecer a imagem pessoal da influencer e facilitar o contato com marcas e parceiros.",
-    repo: "https://github.com/Devmichel15/site-jessi",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
+      "Plataforma de cursos online desenvolvida para a Webstart Academy, oferecendo uma experiência de aprendizado interativa e acessível, com recursos de inscrição, acompanhamento de progresso e suporte ao aluno.",
+    repo: "",
+    link: "https://webstart-academy.onrender.com/",
+    techs: ["React", "JavaScript", "Tailwind CSS", "FireBase"],
   },
+
 
   {
     id: 7,
@@ -78,27 +69,7 @@ export const projects = [
     techs: ["React", "JavaScript", "Tailwind CSS"],
   },
 
-  {
-    id: 8,
-    name: "Website Institucional | Dona Flor",
-    image: "/project8.png",
-    description:
-      "Website institucional criado para apresentar serviços, transmitir credibilidade e facilitar o contato com clientes, reforçando a presença online do negócio.",
-    repo: "https://github.com/Devmichel15/Dona-Flor",
-    link: "https://dona-flor.onrender.com",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
-  },
 
-  {
-    id: 9,
-    name: "Website | Restaurante Pôr do Sol",
-    image: "/project9.png",
-    description:
-      "Website moderno e responsivo para restaurante, focado em apresentar o ambiente, cardápio e localização, ajudando a atrair clientes e fortalecer a marca.",
-    repo: "https://github.com/Devmichel15/por-do-sol",
-    link: "https://por-do-sol.onrender.com",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
-  },
   {
     id: 10,
     name: "Site Artístico | Ghost Arte",
