@@ -1,182 +1,34 @@
-import Header from "../components/Header";
-import { FaGithub, FaInstagram } from "react-icons/fa";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-
-/**
- * Hero Section
- * GSAP-safe split text + gradient per character (no render bugs)
- */
 function Hero() {
-  const containerRef = useRef(null);
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-      const splitTitle1 = gsap.utils.toArray(".split-char-1");
-      const splitTitle2 = gsap.utils.toArray(".split-char-2");
-
-      tl.fromTo(
-        ".hero-greeting",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
-      )
-        // Linha 1 — entrada 3D
-        .fromTo(
-          splitTitle1,
-          {
-            opacity: 0,
-            y: 30,
-            rotateX: -90,
-            transformPerspective: 1000,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            rotateX: 0,
-            duration: 0.7,
-            stagger: 0.03,
-            ease: "back.out(1.7)",
-          },
-          "-=0.4"
-        )
-        // Linha 2 — entrada 2D (gradient-safe)
-        .fromTo(
-          splitTitle2,
-          { opacity: 0, x: 20 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.7,
-            stagger: 0.02,
-            ease: "power2.out",
-          },
-          "-=0.4"
-        )
-        .fromTo(
-          ".hero-desc",
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-          "-=0.5"
-        )
-        .fromTo(
-          ".hero-cta",
-          { opacity: 0, scale: 0.9 },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 0.6,
-            ease: "elastic.out(1, 0.5)",
-          },
-          "-=0.4"
-        );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  /**
-   * Split text helper
-   * Gradient applied per character (CSS-correct)
-   */
-  const renderSplitText = (text, charClass, gradient = false) => (
-    <span className="inline-block">
-      {text.split("").map((char, i) => (
-        <span
-          key={i}
-          className={`
-            inline-block
-            ${charClass}
-            ${gradient
-              ? "text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-indigo-400"
-              : ""}
-          `}
-          style={{ backfaceVisibility: "hidden" }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </span>
-      ))}
-    </span>
-  );
-
   return (
-    <section
-      id="hero"
-      ref={containerRef}
-      className="relative flex flex-col items-center justify-center w-full h-screen px-4 overflow-hidden"
-    >
-      <Header />
+    <section className="hero" id="topo" style={{ position: "relative", padding: "96px 0 120px", overflow: "hidden" }}>
+      <div className="dot-grid" />
 
-      <div className="relative z-10 flex flex-col items-center max-w-5xl pt-16 mx-auto text-center">
-        {/* Greeting */}
-        <p className="hero-greeting mb-8 text-[10px] font-black uppercase italic tracking-[0.4em] text-premium-accent md:text-xs">
+      {/* Decorative elements */}
+      <div className="deco deco-circle float" style={{ width: 170, height: 170, top: 60, right: "8%", background: "var(--color-sky)", animationDelay: ".2s" }} />
+      <div className="deco float" style={{ width: 100, height: 100, bottom: 120, right: "20%", background: "var(--color-rose)", "--r": "-6deg", animationDelay: "1.1s" }} />
+      <div className="deco deco-circle spin-slow" style={{ width: 120, height: 120, top: 280, right: "2%", background: "transparent", borderStyle: "dashed" }} />
+
+      <div className="wrap">
+        <span className="reveal in" style={{ fontFamily: "'Space Mono'", fontWeight: 700, fontSize: 14, textTransform: "uppercase", letterSpacing: ".12em", background: "var(--color-ink)", color: "var(--color-paper)", padding: "9px 18px", display: "inline-block" }}>
           Frontend Developer — Junior Coder
-        </p>
+        </span>
 
-        {/* Title */}
-        <h1
-          className="
-            mb-10
-            text-3xl sm:text-5xl lg:text-7xl
-            font-black tracking-tighter
-            leading-[1.15] sm:leading-[1.05] lg:leading-none
-          "
-        >
-          <span className="block mb-2 text-white">
-            {renderSplitText("Transformo Visão", "split-char-1")}
-          </span>
-
-          <span className="block">
-            {renderSplitText(
-              "em Experiência Digital.",
-              "split-char-2",
-              true
-            )}
-          </span>
+        <h1 className="display reveal in" style={{ fontSize: "clamp(46px, 7vw, 96px)", maxWidth: 900, marginTop: 30, transitionDelay: ".08s" }}>
+          Transformo visão em <span style={{ background: "var(--color-mustard)", padding: "0 12px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>experiência</span> digital.
         </h1>
 
-        {/* Description */}
-        <p className="max-w-2xl text-base font-light leading-relaxed hero-desc mb-14 text-stone-400 md:text-lg lg:text-xl">
-          Arquiteturas que equilibram{" "}
-          <span className="text-blue-400">estética minimalista</span> e{" "}
-          <span className="italic font-medium text-white">
-            estratégia de negócio
-          </span>
-          .
+        <p className="sub reveal in" style={{ fontSize: 20, lineHeight: 1.6, color: "var(--color-ink-soft)", maxWidth: 560, marginTop: 26, transitionDelay: ".16s" }}>
+          Arquiteturas que equilibram estética minimalista e estratégia de negócio — construídas para converter, não só para impressionar.
         </p>
 
-        {/* CTA */}
-        <div className="flex flex-col items-center gap-10 hero-cta sm:flex-row">
-          <a
-            href="#projects"
-            className="group relative overflow-hidden rounded-full bg-white px-12 py-5 text-[11px] font-black text-black transition-all hover:scale-105 active:scale-95"
-          >
-            <span className="relative z-10 tracking-[0.2em]">
-              VER TRABALHOS
-            </span>
-            <div className="absolute inset-0 transition-transform duration-500 ease-out translate-y-full bg-premium-accent group-hover:translate-y-0" />
+        <div className="cta-row reveal in" style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 42, flexWrap: "wrap", transitionDelay: ".24s" }}>
+          <a className="btn" href="#projetos">Ver Trabalhos →</a>
+          <a className="icon-btn" href="https://github.com/devmichel15" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" /></svg>
           </a>
-
-          <div className="flex gap-10">
-            <a
-              href="https://github.com/devmichel15"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-3xl transition-all text-stone-700 hover:scale-110 hover:text-white"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.instagram.com/michel.cesar1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-3xl transition-all text-stone-700 hover:scale-110 hover:text-pink-500"
-            >
-              <FaInstagram />
-            </a>
-          </div>
+          <a className="icon-btn" href="https://www.instagram.com/michel.cesar1" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="0"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" /></svg>
+          </a>
         </div>
       </div>
     </section>

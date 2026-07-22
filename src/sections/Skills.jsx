@@ -1,77 +1,61 @@
-import { useRef } from "react";
-import { useAnimateOnScroll } from "../hooks/useAnimateOnScroll";
 import { skillsFrontend, skillsBackend, skillsTools } from "../data";
 
-/**
- * Skills Section (Ecosystem)
- * Displays technolgy stack with standardized GSAP scroll animations
- */
 function Skills() {
-  const containerRef = useRef(null);
+  const categories = [
+    { title: "Frontend", skills: skillsFrontend },
+    { title: "Backend", skills: skillsBackend },
+    { title: "Platform", skills: skillsTools },
+  ];
 
-  // Apply centralized scroll animation to all items
-  useAnimateOnScroll(
-    ".skill-item",
-    { y: 20, stagger: 0.05, start: "top 90%" },
-    containerRef,
-  );
-
-  const renderCategory = (title, skills) => (
-    <div className="space-y-8">
-      <h3 className="text-lg font-black text-white flex items-center gap-3 uppercase tracking-widest">
-        <span className="w-1.5 h-6 bg-premium-accent rounded-full" />
-        {title}
-      </h3>
-      <div className="grid grid-cols-2 gap-4">
-        {skills.map((skill) => {
-          const Icon = skill.icon;
-          return (
-            <div
-              key={skill.id}
-              className="skill-item group flex items-center gap-4 p-2 rounded-2xl bg-white/5 border border-white/5 hover:border-premium-accent/30 hover:bg-white/8 transition-all duration-500 hover:scale-105 active:scale-95"
-            >
-              <div className="p-1 rounded-xl bg-white/5 text-stone-400 group-hover:text-white group-hover:bg-premium-accent/10 transition-all duration-500">
-                <Icon className="text-2xl" />
-              </div>
-              <span className="text-sm font-bold text-stone-400 group-hover:text-white transition-colors tracking-tight">
-                {skill.name}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  const marqueeText = "✦ REACT ✦ TAILWIND CSS ✦ FIREBASE ✦ NODE.JS ✦ GSAP ✦ SUPABASE ✦ REACT ✦ TAILWIND CSS ✦ FIREBASE ✦ NODE.JS ✦ GSAP ✦ SUPABASE";
 
   return (
-    <section
-      id="skills"
-      ref={containerRef}
-      className="py-32 bg-premium-bg border-t border-white/5 relative overflow-hidden"
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <header className="text-center mb-24">
-          <h2 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter italic">
-            Meu Ecossistema
-          </h2>
-          <p className="text-stone-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Minha stack é focada em ferramentas que garantem{" "}
-            <span className="text-white font-medium italic">
-              performance, escalabilidade e manutenibilidade
-            </span>
-            .
-          </p>
-        </header>
+    <section id="ecossistema" style={{ background: "var(--color-ink)", color: "var(--color-paper)", borderTop: "3px solid var(--color-ink)", borderBottom: "3px solid var(--color-ink)", position: "relative", padding: "100px 0" }}>
+      <div className="wrap">
+        <div className="section-label reveal" style={{ fontFamily: "'Space Mono'", fontWeight: 700, fontSize: 15, textTransform: "uppercase", letterSpacing: ".1em", color: "var(--color-mustard)", marginBottom: 14 }}>
+          Ecossistema
+        </div>
+        <h2 className="display reveal" style={{ fontSize: "clamp(34px, 4.4vw, 58px)" }}>
+          Meu ecossistema
+        </h2>
 
-        <div className="grid gap-16 md:grid-cols-3">
-          {renderCategory("Frontend", skillsFrontend)}
-          {renderCategory("Backend", skillsBackend)}
-          {renderCategory("Platform", skillsTools)}
+        <div className="eco-cols" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 44, marginTop: 44 }}>
+          {categories.map((cat, ci) => (
+            <div key={ci} className="reveal" style={{ transitionDelay: `${ci * 0.07 + 0.05}s` }}>
+              <div style={{ fontFamily: "'Space Mono'", fontWeight: 700, fontSize: 14, textTransform: "uppercase", letterSpacing: ".08em", background: "var(--color-paper)", color: "var(--color-ink)", padding: "7px 14px", width: "fit-content", marginBottom: 16 }}>
+                {cat.title}
+              </div>
+              <div>
+                {cat.skills.map((skill) => (
+                  <span key={skill.id} className="eco-chip" style={{
+                    display: "inline-flex", alignItems: "center", gap: 8,
+                    border: "3px solid var(--color-paper)", padding: "9px 15px", margin: "0 8px 10px 0",
+                    fontFamily: "'Space Grotesk'", fontWeight: 600, fontSize: 14.5,
+                    transition: "background .15s, color .15s, transform .15s", cursor: "default"
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "var(--color-paper)"; e.currentTarget.style.color = "var(--color-ink)"; e.currentTarget.style.transform = "translate(-2px,-2px)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = ""; e.currentTarget.style.color = ""; e.currentTarget.style.transform = ""; }}
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Decorative accent blur */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-premium-accent/5 blur-[120px] rounded-full translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      {/* Marquee */}
+      <div style={{ marginTop: 60, borderTop: "3px solid var(--color-paper)", padding: "22px 0", overflow: "hidden" }}>
+        <div style={{ display: "flex", gap: 50, whiteSpace: "nowrap", width: "max-content", fontFamily: "'Fraunces'", fontStyle: "italic", fontWeight: 600, fontSize: 32, animation: "marquee 26s linear infinite" }}>
+          <span>{marqueeText}</span>
+          <span>{marqueeText}</span>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      `}</style>
     </section>
   );
 }

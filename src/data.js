@@ -204,6 +204,13 @@ export const skillsBackend = [
     icon: SiSupabase, // se estiver usando os ícones do react-icons
     color: "text-green-500",
   },
+  {
+    id: 8,
+    name: "PHP",
+    level: "Iniciante",
+    icon: FaCode, // Usando um ícone genérico para PHP
+    color: "text-purple-600",
+  }
 ];
 
 export const skillsTools = [
