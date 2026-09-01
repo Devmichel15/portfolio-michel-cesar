@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
 .mono { font-family: 'Space Mono', monospace; letter-spacing: 0.03em; }
 
 /* ---------- Layout ---------- */
-.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 32px; }
 
 /* ---------- Dot Grid ---------- */
 .dot-grid {

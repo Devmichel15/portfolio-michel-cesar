@@ -99,6 +99,36 @@ export const projects = [
     repo: "https://github.com/Devmichel15/google-translate",
     link: "https://google-translate-aqqr.onrender.com",
     techs: ["React", "JavaScript", "TailwindCss"]
+  },
+
+  {
+    id: 13,
+    name: "TeenAviva",
+    image: "/project13.png",
+    description: "TeenAviva é uma aplicação mobile desenvolvida para proporcionar uma experiência digital moderna e interativa para jovens. O projeto foi desenvolvido com foco em uma interface intuitiva, navegação fluida e uma experiência mobile otimizada.",
+    repo: "",
+    link: "https://teenaviva-app.onrender.com/",
+    techs: ["React Native", "Expo", "Expo Go", "JavaScript"]
+  },
+
+  {
+    id: 14,
+    name: "NeonWave",
+    image: "/project14.png",
+    description: "NeonWave é um website moderno desenvolvido com uma abordagem visual criativa e futurista. O projeto destaca-se pela sua identidade visual, interface dinâmica e experiência imersiva, explorando elementos modernos de web design.",
+    repo: "",
+    link: "https://website-neonwave.onrender.com/",
+    techs: ["React", "JavaScript", "Tailwindcss", "Firebase"]
+  },
+
+  {
+    id: 15,
+    name: "XE Homem",
+    image: "/project15.png",
+    description: "XE Homem é uma plataforma web desenvolvida com foco em apresentar uma experiência digital moderna, organizada e responsiva. O projeto prioriza uma interface intuitiva, design visual e boa experiência de navegação.",
+    repo: "",
+    link: "https://xe-homem.onrender.com/",
+    techs: ["React", "JavaScript", "Tailwindcss", "Firebase"]
   }
 ];
 
