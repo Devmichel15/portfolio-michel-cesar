@@ -14,7 +14,6 @@ import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFramer } from "react-icons/si";
 
 export const projects = [
-  
   {
     id: 2,
     name: "SaaS de Gestão Financeira",
@@ -24,6 +23,17 @@ export const projects = [
     repo: "https://github.com/Devmichel15/gestao-ativa-app",
     link: "https://gestao-ativa-app.onrender.com",
     techs: ["React", "Node.js", "Firebase", "Tailwind CSS"],
+  },
+
+  {
+    id: 5,
+    name: "Webstart Academy | plataforma de cursos online",
+    image: "/project5.png",
+    description:
+      "Plataforma de cursos online desenvolvida para a Webstart Academy, oferecendo uma experiência de aprendizado interativa e acessível, com recursos de inscrição, acompanhamento de progresso e suporte ao aluno.",
+    repo: "",
+    link: "https://webstart-academy.onrender.com/",
+    techs: ["React", "JavaScript", "Tailwind CSS", "FireBase"],
   },
 
   {
@@ -38,49 +48,6 @@ export const projects = [
   },
 
   {
-    id: 4,
-    name: "Landing Page | Restaurante Café Del Mar",
-    image: "/project4.png",
-    description:
-      "Landing page profissional criada para fortalecer a presença digital do restaurante, destacando cardápio, localização e identidade visual, com foco em atrair clientes e aumentar reservas.",
-    repo: "https://github.com/Devmichel15/site-del-mar",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
-  },
-  {
-    id: 5,
-    name: "Webstart Academy | plataforma de cursos online",
-    image: "/project5.png",
-    description:
-      "Plataforma de cursos online desenvolvida para a Webstart Academy, oferecendo uma experiência de aprendizado interativa e acessível, com recursos de inscrição, acompanhamento de progresso e suporte ao aluno.",
-    repo: "",
-    link: "https://webstart-academy.onrender.com/",
-    techs: ["React", "JavaScript", "Tailwind CSS", "FireBase"],
-  },
-
-
-  {
-    id: 7,
-    name: "Biografia Digital | Prodígio",
-    image: "/project7.png",
-    description:
-      "Website biográfico desenvolvido para o artista Prodígio, destacando sua trajetória, obras e identidade cultural, com um design moderno e responsivo.",
-    repo: "https://github.com/Devmichel15/site-prodigio",
-    link: "https://site-prodigio.onrender.com",
-    techs: ["React", "JavaScript", "Tailwind CSS"],
-  },
-
-
-  {
-    id: 10,
-    name: "Site Artístico | Ghost Arte",
-    image: "/project10.png",
-    description:
-      "Ghost Artes é um site experimental focado em arte urbana e digital, com design moderno, layout responsivo e animações suaves que reforçam a experiência visual. Desenvolvido com React, Tailwind CSS e GSAP, priorizando performance e mobile-first.",
-    repo: "https://github.com/Devmichel15/site-ghost-art",
-    link: "https://site-ghost-art.onrender.com/",
-    techs: ["React", "JavaScript", "TailwindCss", "Framer motion", "Gsap"],
-  },
-  {
     id: 11,
     name: "Ecommerce | Mateia",
     image: "/project11.png",
@@ -88,16 +55,6 @@ export const projects = [
       "Mateia E-commerce é uma loja online desenvolvida com foco em experiência de compra intuitiva, design responsivo e navegação fluida em todas as telas. A plataforma permite que usuários explorem produtos, visualizem detalhes e interajam com um fluxo de compra otimizado, seguindo boas práticas de e-commerce moderno. Tecnologias aplicadas incluem React, Tailwind CSS e princípios de mobile-first design, garantindo performance, acessibilidade e usabilidade consistentes em dispositivos móveis e desktops.",
     repo: "https://github.com/Devmichel15/mateia-ecommerce",
     link: "https://mateia-ecommerce.onrender.com/",
-    techs: ["React", "JavaScript", "TailwindCss"]
-  },
-
-  {
-    id: 12,
-    name: "Sistema de Tradução de idiomas",
-    image: "/project12.png",
-    description: "Sistema de tradução de idiomas desenvolvido com React e Tailwindcss, utilizando a API do My Memory API para fornecer traduções precisas e rápidas. O sistema apresenta uma interface intuitiva, permitindo que os usuários insiram texto e selecionem os idiomas de origem e destino, facilitando a comunicação global de forma eficiente.",
-    repo: "https://github.com/Devmichel15/google-translate",
-    link: "https://google-translate-aqqr.onrender.com",
     techs: ["React", "JavaScript", "TailwindCss"]
   },
 
@@ -112,13 +69,24 @@ export const projects = [
   },
 
   {
+    id: 10,
+    name: "Site Artístico | Ghost Arte",
+    image: "/project10.png",
+    description:
+      "Ghost Artes é um site experimental focado em arte urbana e digital, com design moderno, layout responsivo e animações suaves que reforçam a experiência visual. Desenvolvido com React, Tailwind CSS e GSAP, priorizando performance e mobile-first.",
+    repo: "https://github.com/Devmichel15/site-ghost-art",
+    link: "https://site-ghost-art.onrender.com/",
+    techs: ["React", "JavaScript", "TailwindCss", "Framer motion", "Gsap"],
+  },
+
+  {
     id: 14,
     name: "NeonWave",
     image: "/project14.png",
     description: "NeonWave é um website moderno desenvolvido com uma abordagem visual criativa e futurista. O projeto destaca-se pela sua identidade visual, interface dinâmica e experiência imersiva, explorando elementos modernos de web design.",
     repo: "",
     link: "https://website-neonwave.onrender.com/",
-    techs: ["React", "JavaScript", "Tailwindcss", "Firebase"]
+    techs: ["React", "JavaScript", "HTML", "CSS"]
   },
 
   {
@@ -128,7 +96,38 @@ export const projects = [
     description: "XE Homem é uma plataforma web desenvolvida com foco em apresentar uma experiência digital moderna, organizada e responsiva. O projeto prioriza uma interface intuitiva, design visual e boa experiência de navegação.",
     repo: "",
     link: "https://xe-homem.onrender.com/",
-    techs: ["React", "JavaScript", "Tailwindcss", "Firebase"]
+    techs: ["React", "JavaScript", "HTML", "CSS"]
+  },
+
+  {
+    id: 12,
+    name: "Sistema de Tradução de idiomas",
+    image: "/project12.png",
+    description: "Sistema de tradução de idiomas desenvolvido com React e Tailwindcss, utilizando a API do My Memory API para fornecer traduções precisas e rápidas. O sistema apresenta uma interface intuitiva, permitindo que os usuários insiram texto e selecionem os idiomas de origem e destino, facilitando a comunicação global de forma eficiente.",
+    repo: "https://github.com/Devmichel15/google-translate",
+    link: "https://google-translate-aqqr.onrender.com",
+    techs: ["React", "JavaScript", "TailwindCss"]
+  },
+
+  {
+    id: 7,
+    name: "Biografia Digital | Prodígio",
+    image: "/project7.png",
+    description:
+      "Website biográfico desenvolvido para o artista Prodígio, destacando sua trajetória, obras e identidade cultural, com um design moderno e responsivo.",
+    repo: "https://github.com/Devmichel15/site-prodigio",
+    link: "https://site-prodigio.onrender.com",
+    techs: ["React", "JavaScript", "Tailwind CSS"],
+  },
+
+  {
+    id: 4,
+    name: "Landing Page | Restaurante Café Del Mar",
+    image: "/project4.png",
+    description:
+      "Landing page profissional criada para fortalecer a presença digital do restaurante, destacando cardápio, localização e identidade visual, com foco em atrair clientes e aumentar reservas.",
+    repo: "https://github.com/Devmichel15/site-del-mar",
+    techs: ["React", "JavaScript", "Tailwind CSS"],
   }
 ];
 
