@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram } from "react-icons/fa";
 function Contact() {
   const contactCards = [
     { label: "WhatsApp", value: "(+244) 928 536 339", href: "https://wa.me/244928536339" },
-    { label: "Email", value: "michel15cesar@gmail.com", href: "mailto:michel15cesar@gmail.com" },
+    { label: "Email", value: "httpmichel15cesar@gmail.com", href: "mailto:httpmichel15cesar@gmail.com" },
     { label: "Social", value: "GitHub · Instagram", href: "https://github.com/devmichel15" },
   ];
 

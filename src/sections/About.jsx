@@ -20,7 +20,7 @@ function About() {
           {/* Portrait */}
           <div className="reveal">
             <div style={{ position: "relative", border: "4px solid var(--color-ink)", boxShadow: "11px 11px 0 0 var(--color-ink)", background: "var(--color-paper)", padding: 14 }}>
-              <img src="/michel.jpeg" alt="Michel César" style={{ width: "100%", aspectRatio: "1/1", objectFit: "cover" }} />
+              <img src="/michel2.png" alt="Michel César" style={{ width: "100%", aspectRatio: "1/1", objectFit: "cover" }} />
               <div style={{ position: "absolute", bottom: -18, left: -18, background: "var(--color-sage)", border: "3px solid var(--color-ink)", boxShadow: "4px 4px 0 0 var(--color-ink)", fontFamily: "'Space Mono'", fontWeight: 700, fontSize: 13, textTransform: "uppercase", padding: "8px 14px", transform: "rotate(-4deg)" }}>
                 Ghost with precision
               </div>
